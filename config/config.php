@@ -27,4 +27,4 @@ $config['CORS']         = false;
 $config['ALLOWED_ORIGINS'] = [];
 
 // string array misalnya ['koneksi.php','request.php'];
-$config['HELPER']       = ['koneksi.php', 'request.php', 'security.php'];
+$config['HELPER']       = [];
