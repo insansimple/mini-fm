@@ -14,6 +14,7 @@
             height: 100vh;
             align-items: center;
             justify-content: center;
+            font-family: sans-serif;
         }
 
         div {
