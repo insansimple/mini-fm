@@ -5,7 +5,6 @@ defined('BASEPATH') or exit('Akses langsung tidak diizinkan!');
 if (!function_exists('db_mysqli')) {
     function db_mysqli()
     {
-        $conn;
         global $config;
 
         $conn = mysqli_connect($config['DB_SERVER'], $config['DB_USER'], $config['DB_PASSWORD'], $config['DB_NAME']);

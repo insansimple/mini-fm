@@ -4,12 +4,12 @@ defined('BASEPATH') or exit('Akses langsung tidak diizinkan!');
 
 $ROUTES = [];
 
-function add_route($path, $module, $method="GET")
+function add_route($path, $module, $method = "GET")
 {
     global $ROUTES;
-    if(substr($path, 0, 1) != "/"){
-        $ROUTES[strtolower('/'.$path)] = ["path" => $path, "module" => $module, "method" => $method];
-    }else{
+    if (substr($path, 0, 1) != "/") {
+        $ROUTES[strtolower('/' . $path)] = ["path" => $path, "module" => $module, "method" => $method];
+    } else {
         $ROUTES[strtolower($path)] = ["path" => $path, "module" => $module, "method" => $method];
     }
 }

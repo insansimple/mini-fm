@@ -13,22 +13,21 @@ $headers = [
 // remove version of php
 header_remove('x-powered-by');
 
-if($config['CORS']){
-    if($_SERVER['REQUEST_METHOD'] == "OPTIONS"){
+if ($config['CORS']) {
+    if ($_SERVER['REQUEST_METHOD'] == "OPTIONS") {
         http_response_code(200);
     }
 
-    if(isset($_SERVER['HTTP_ORIGIN'])){
-        if(count($config['ALLOWED_ORIGINS'])){
-            if(!in_array($_SERVER['HTTP_ORIGIN'], $config['ALLOWED_ORIGINS'])){
+    if (isset($_SERVER['HTTP_ORIGIN'])) {
+        if (count($config['ALLOWED_ORIGINS'])) {
+            if (!in_array($_SERVER['HTTP_ORIGIN'], $config['ALLOWED_ORIGINS'])) {
                 http_response_code(403);
                 exit();
             }
         }
     }
 
-    foreach($headers as $key => $value)
-    {
-        header($key.': '.$value);
+    foreach ($headers as $key => $value) {
+        header($key . ': ' . $value);
     }
 }
