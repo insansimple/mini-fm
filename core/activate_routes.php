@@ -2,10 +2,17 @@
 
 defined('BASEPATH') or exit('Akses langsung tidak diizinkan!');
 
-$path_info = isset($_SERVER['PATH_INFO']) ? remove_end_bs($_SERVER['PATH_INFO']) : "/";
+$request_uri    = $_SERVER['REQUEST_URI'];
+$path_info      = explode("?", $request_uri)[0];
+
+if ($path_info != "/") {
+    $path_info = remove_end_bs($path_info);
+}
+
+// $path_info = isset($_SERVER['PATH_INFO']) ? remove_end_bs($_SERVER['PATH_INFO']) : '/';
 
 if (!isset($ROUTES[$path_info])) {
-    include fix_separator('error', '404.php');
+    include fix_separator(['error', '404.php']);
 } else {
     // jika metod request lebih dari satu
     if (is_array($ROUTES[$path_info]['method'])) {
@@ -33,7 +40,7 @@ if (!isset($ROUTES[$path_info])) {
         call_user_func($module_or_callable);
     } else {
         ob_start();
-        include fix_separator($config['MODULES_DIR'], $module_or_callable);
+        include fix_separator([$config['MODULES_DIR'], $module_or_callable]);
         $content = ob_get_contents();
         ob_end_clean();
         echo $content;

@@ -33,13 +33,37 @@ if (!function_exists("load_view")) {
                 ${$key} = $value;
             }
         }
-        include fix_separator(get_config('MODULES_DIR'), $module);
+        include fix_separator([get_config('MODULES_DIR'), $module]);
         $res = ob_get_contents();
         ob_end_clean();
 
         if ($return) {
             return $res;
         }
+
+        echo $res;
+    }
+}
+
+if (!function_exists("load_helper")) {
+    function load_helper($helper)
+    {
+        ob_start();
+        include fix_separator([get_config('HELPER_DIR'), $helper]);
+        $res = ob_get_contents();
+        ob_end_clean();
+
+        echo $res;
+    }
+}
+
+if (!function_exists("load_library")) {
+    function load_library($library)
+    {
+        ob_start();
+        include fix_separator([get_config('LIBRARIES_DIR'), $library]);
+        $res = ob_get_contents();
+        ob_end_clean();
 
         echo $res;
     }

@@ -55,7 +55,8 @@ if (!function_exists("delete_session")) {
             session_start();
         }
 
-        unset($_SESSION[$session_name]);
+        // unset($_SESSION[$session_name]);
+        session_destroy();
     }
 }
 
@@ -73,7 +74,11 @@ if (!function_exists("get_session")) {
             session_start();
         }
 
-        return $_SESSION[$session_name];
+        if (isset($_SESSION[$session_name])) {
+            return $_SESSION[$session_name];
+        } else {
+            return null;
+        }
     }
 }
 

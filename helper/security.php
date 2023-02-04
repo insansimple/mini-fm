@@ -17,16 +17,16 @@ function crypto_rand_secure($min, $max)
     return $min + $rnd;
 }
 
-function get_token($length=200)
+function get_token($length = 200)
 {
     $token = "";
     $codeAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    $codeAlphabet.= "abcdefghijklmnopqrstuvwxyz";
-    $codeAlphabet.= "0123456789";
+    $codeAlphabet .= "abcdefghijklmnopqrstuvwxyz";
+    $codeAlphabet .= "0123456789";
     $max = strlen($codeAlphabet); // edited
 
-    for ($i=0; $i < $length; $i++) {
-        $token .= $codeAlphabet[crypto_rand_secure(0, $max-1)];
+    for ($i = 0; $i < $length; $i++) {
+        $token .= $codeAlphabet[crypto_rand_secure(0, $max - 1)];
     }
 
     return $token;

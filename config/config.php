@@ -4,6 +4,11 @@ defined('BASEPATH') or exit('Akses langsung tidak diizinkan!');
 
 // variabel umum
 $config['URL']          = 'http://localhost:8000/';
+
+// konfigurasi url dengan jenis parameter dan page
+
+// $config['URL_TYPE']     = 'parameter';
+$config['URL_TYPE']     = 'page';
 $config['APP_NAME']     = 'Mini FM';
 $config['VERSI']        = '1.1';
 $config['DB_SERVER']    = 'localhost';
@@ -17,7 +22,7 @@ $config['STORAGE_DIR']  = 'upload';
 $config['ROUTE_DIR']    = 'routes';
 $config['SYSTEM_DIR']   = 'core';
 $config['SESSION_NAME'] = 'simple_session';
-$config['REDIRECT_PATH']= '';
+$config['REDIRECT_PATH'] = '';
 
 // configruasi cors (Cross-origin resource sharing)
 // nilai bisa true/false

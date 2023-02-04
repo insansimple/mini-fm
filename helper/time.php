@@ -11,7 +11,11 @@ if (!function_exists("time_ind")) {
 
         $datetime = explode(" ", $dt);
         $str_date = $datetime[0];
-        $str_time = $datetime[1];
+        if (isset($datetime[1])) {
+            $str_time = $datetime[1];
+        } else {
+            $str_time = "";
+        }
 
         $date = explode("-", $str_date);
         $d = $date[2];

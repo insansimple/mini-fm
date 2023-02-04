@@ -22,7 +22,7 @@ function redirect($path)
 
 function is_request_uri($href)
 {
-    $request_uri = $_SERVER['PATH_INFO'] ?? "/";
+    $request_uri = $_SERVER['PATH_INFO'] ? $_SERVER['PATH_INFO'] : "/";
     $request_uri = substr($request_uri, 0, strlen($href));
     if ($href == $request_uri) {
         return true;
