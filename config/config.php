@@ -4,11 +4,6 @@ defined('BASEPATH') or exit('Akses langsung tidak diizinkan!');
 
 // variabel umum
 $config['URL']          = 'http://localhost:8000/';
-
-// konfigurasi url dengan jenis parameter dan page
-
-// $config['URL_TYPE']     = 'parameter';
-$config['URL_TYPE']     = 'page';
 $config['APP_NAME']     = 'Mini FM';
 $config['VERSI']        = '1.1';
 $config['DB_SERVER']    = 'localhost';
