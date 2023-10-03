@@ -4,8 +4,8 @@ defined('BASEPATH') or exit('Akses langsung tidak diizinkan!');
 
 // variabel umum
 $config['URL']          = 'http://localhost:8000/';
-$config['APP_NAME']     = 'Mini FM';
-$config['VERSI']        = '1.1';
+$config['APP_NAME']     = 'LMS Mate-21';
+$config['VERSI']        = '1.0';
 $config['DB_SERVER']    = 'localhost';
 $config['DB_USER']      = '';
 $config['DB_PASSWORD']  = '';
